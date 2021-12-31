@@ -4,7 +4,7 @@
 - Original from: https://github.com/Tyler-Zimmerman/qb-buds
 ## Changes
 - nh-keyboard to qb-input
-- berkie-target to qb-target
+
 
 ## Note
 
