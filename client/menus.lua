@@ -186,7 +186,7 @@ end)
 -- Billing --
 RegisterNetEvent("qb-buds:bill", function()
     local dialog = exports['qb-input']:ShowInput({
-        header = "bill",
+        header = "Bill",
         submitText = "Submit",
         inputs = {
             {
@@ -199,7 +199,7 @@ RegisterNetEvent("qb-buds:bill", function()
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Iznos!'
+                text = 'Amount!'
             }
         }
     })
