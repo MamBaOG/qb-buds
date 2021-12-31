@@ -14,6 +14,7 @@ Citizen.CreateThread(function()
 			event = "qb-buds:DutyBuds",
 			icon = "fas fa-clipboard",
 			label = "Clock In/Out",
+			job = "bestbuds",			
 			},
 		},
 		distance = 2.5
@@ -31,6 +32,7 @@ Citizen.CreateThread(function()
 			event = "qb-buds:Tray1",
 			icon = "fas fa-clipboard",
 			label = "Tray 1",
+			job = "bestbuds",
 			},
 		},
 		distance = 1.5
