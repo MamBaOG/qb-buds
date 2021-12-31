@@ -4,6 +4,7 @@
 - Original from: https://github.com/Tyler-Zimmerman/qb-buds
 ## Changes
 - nh-keyboard to qb-input
+- berkie-target to qb-target
 
 ## Note
 
@@ -25,7 +26,7 @@ QBCore Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-berkie-target - https://github.com/BerkieBb/berkie-target (Only needed if not using draw text)
+qb-target - https://github.com/BerkieBb/qb-target (Only needed if not using draw text)
 
 nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
 
