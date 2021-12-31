@@ -29,7 +29,6 @@ berkie-target - https://github.com/BerkieBb/berkie-target (Only needed if not us
 
 nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
 
-nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~ See folder [NH] for scripts
 
 ## TODO
 
