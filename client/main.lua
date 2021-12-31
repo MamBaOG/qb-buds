@@ -21,6 +21,7 @@ end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+        QBCore.Functions.GetPlayerData(function(PlayerData)
 	PlayerJob = PlayerData.job
 	if PlayerData.job.onduty then
 	    if Player.PlayerData.job.name == "bestbuds" then
@@ -31,9 +32,7 @@ end)
 
 RegisterNetEvent('QBCore:Client:SetDuty')
 AddEventHandler('QBCore:Client:SetDuty', function(duty)
-    if PlayerJob.name == 'bestbuds' then
     	onDuty = duty
-    end
 end)
 
 RegisterNetEvent("qb-buds:DutyBuds")
