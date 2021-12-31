@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetSharedObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Billing Information
 
