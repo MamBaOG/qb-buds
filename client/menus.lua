@@ -185,7 +185,7 @@ end)
 
 -- Billing --
 RegisterNetEvent("qb-buds:bill", function()
-    local dialog = exports['qb-input']:ShowInput({
+    local bill = exports['qb-input']:ShowInput({
         header = "Bill",
         submitText = "Submit",
         inputs = {
@@ -203,8 +203,8 @@ RegisterNetEvent("qb-buds:bill", function()
             }
         }
     })
-    if dialog then
-        if not dialog.id or not dialog.amount then return end
-        TriggerServerEvent("qb-buds:bill:player", dialog.id, dialog.amount)
+    if bill then
+        if not bill.id or not bill.amount then return end
+        TriggerServerEvent("qb-buds:bill:player", bill.id, bill.amount)
     end
 end)
