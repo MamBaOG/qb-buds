@@ -184,25 +184,27 @@ RegisterNetEvent('nh-context:budsWeedCrafting', function(data)
 end)
 
 -- Billing --
-RegisterNetEvent("qb-buds:bill")
-AddEventHandler("qb-buds:bill", function()
-    local bill = exports["nh-keyboard"]:KeyboardInput({
-        header = "Create Receipt",
-        rows = {
+RegisterNetEvent("qb-buds:bill", function()
+    local dialog = exports['qb-input']:ShowInput({
+        header = "bill",
+        submitText = "Submit",
+        inputs = {
             {
-                id = 0,
-                txt = "Server ID"
+                type = 'number',
+                isRequired = true,
+                name = 'id',
+                text = 'Server ID'
             },
             {
-                id = 1,
-                txt = "Amount"
+                type = 'number',
+                isRequired = true,
+                name = 'amount',
+                text = 'Iznos!'
             }
         }
     })
-    if bill ~= nil then
-        if bill[1].input == nil or bill[2].input == nil then 
-            return 
-        end
-        TriggerServerEvent("qb-buds:bill:player", bill[1].input, bill[2].input)
+    if dialog then
+        if not dialog.id or not dialog.amount then return end
+        TriggerServerEvent("qb-buds:bill:player", dialog.id, dialog.amount)
     end
 end)
