@@ -2,6 +2,8 @@
 
 - Fixed Version qb-buds.
 - Original from: https://github.com/Tyler-Zimmerman/qb-buds
+- #changes
+- nh-keyboard change to qb-input
 
 ## Note
 
