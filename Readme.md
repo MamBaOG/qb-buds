@@ -1,5 +1,8 @@
 # A Best Buds Target Script for QBCore Framework
 
+- Fixed Version qb-buds.
+- Original from: https://github.com/Tyler-Zimmerman/qb-buds
+
 ## Note
 
 - Forked and adjusted originally from qb-burgershot to use for qb-uwu
