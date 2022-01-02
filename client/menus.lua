@@ -2,7 +2,7 @@
 
 Citizen.CreateThread(function()
 
-	exports['berkie-target']:AddBoxZone("budsDuty", vector3(375.65, -824.95, 29.3), 0.30, 1.2, {
+	exports['qb-target']:AddBoxZone("budsDuty", vector3(375.65, -824.95, 29.3), 0.30, 1.2, {
 		name = "budsDuty",
 		heading = 177.88,
 		debugPoly = true,
@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
 		distance = 2.5
 	})
 
-	exports['berkie-target']:AddBoxZone("budstray1", vector3(377.26, -827.3, 29.3), 0.60, 0.70, {
+	exports['qb-target']:AddBoxZone("budstray1", vector3(377.26, -827.3, 29.3), 0.60, 0.70, {
 		name = "budstray1",
 		heading = 177.88,
 		debugPoly = true,
@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	})
 	
-	exports['berkie-target']:AddBoxZone("budsRegister", vector3(380.2, -827.29, 29.3), 0.60, 0.70, {
+	exports['qb-target']:AddBoxZone("budsRegister", vector3(380.2, -827.29, 29.3), 0.60, 0.70, {
 		name = "budsRegister",
 		heading = 177.88,
 		debugPoly = true,
@@ -55,7 +55,7 @@ Citizen.CreateThread(function()
 		distance = 2.0
 	})
 
-	exports['berkie-target']:AddBoxZone("budsShop", vector3(373.61, -827.76, 29.3), 2.10, 0.85, {
+	exports['qb-target']:AddBoxZone("budsShop", vector3(373.61, -827.76, 29.3), 2.10, 0.85, {
 		name = "budsShop",
 		heading = 177.88,
 		debugPoly = true,
@@ -73,7 +73,7 @@ Citizen.CreateThread(function()
 		distance = 2.0
 	})
 
-	exports['berkie-target']:AddBoxZone("budsStorage", vector3(376.88, -824.5, 28.3), 0.9, 0.75, {
+	exports['qb-target']:AddBoxZone("budsStorage", vector3(376.88, -824.5, 28.3), 0.9, 0.75, {
 		name = "budsStorage",
 		heading = 177.88,
 		debugPoly = true,
@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 		distance = 2.0
 	})
 
-	exports['berkie-target']:AddBoxZone("budsWeedCrafting", vector3(382.51, -817.44, 29.3), 1.25, 2.25, {
+	exports['qb-target']:AddBoxZone("budsWeedCrafting", vector3(382.51, -817.44, 29.3), 1.25, 2.25, {
 		name = "budsWeedCrafting",
 		heading = 179.88,
 		debugPoly = true,
@@ -182,25 +182,27 @@ RegisterNetEvent('nh-context:budsWeedCrafting', function(data)
 end)
 
 -- Billing --
-RegisterNetEvent("qb-buds:bill")
-AddEventHandler("qb-buds:bill", function()
-    local bill = exports["nh-keyboard"]:KeyboardInput({
-        header = "Create Receipt",
-        rows = {
+RegisterNetEvent("qb-buds:bill", function()
+    local bill = exports['qb-input']:ShowInput({
+        header = "Racun",
+        submitText = "Potvrdi",
+        inputs = {
             {
-                id = 0,
-                txt = "Server ID"
+                type = 'number',
+                isRequired = true,
+                name = 'id',
+                text = 'Server ID'
             },
             {
-                id = 1,
-                txt = "Amount"
+                type = 'number',
+                isRequired = true,
+                name = 'amount',
+                text = 'Iznos!'
             }
         }
     })
-    if bill ~= nil then
-        if bill[1].input == nil or bill[2].input == nil then 
-            return 
-        end
-        TriggerServerEvent("qb-buds:bill:player", bill[1].input, bill[2].input)
+    if bill then
+        if not bill.id or not bill.amount then return end
+        TriggerServerEvent("qb-buds:bill:player", bill.id, bill.amount)
     end
 end)
