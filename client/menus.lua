@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	})
 	
-	exports['berkie-target']:AddBoxZone("budsRegister", vector3(380.2, -827.29, 29.3), 0.60, 0.70, {
+	exports['qb-target']:AddBoxZone("budsRegister", vector3(380.2, -827.29, 29.3), 0.60, 0.70, {
 		name = "budsRegister",
 		heading = 177.88,
 		debugPoly = true,
