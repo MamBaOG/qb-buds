@@ -21,13 +21,14 @@ end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-        QBCore.Functions.GetPlayerData(function(PlayerData)
-	PlayerJob = PlayerData.job
-	if PlayerData.job.onduty then
-	    if Player.PlayerData.job.name == "bestbuds" then
-		TriggerServerEvent("QBCore:ToggleDuty")
-	    end
-	end
+    QBCore.Functions.GetPlayerData(function(PlayerData)
+        PlayerJob = PlayerData.job
+        if PlayerData.job.onduty then
+            if PlayerData.job.name == "bestbuds" then
+                TriggerServerEvent("QBCore:ToggleDuty")
+            end
+        end
+    end)
 end)
 
 RegisterNetEvent('QBCore:Client:SetDuty')
@@ -112,7 +113,7 @@ AddEventHandler("qb-buds:bph", function()
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_purple-haze", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "joint_bph", 1)					
+					TriggerServerEvent('QBCore:Server:AddItem', "joint_bph", 1)
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_bph"], "add")
                     			QBCore.Functions.Notify("You made a Joint", "success")
 				end, function()
@@ -144,7 +145,7 @@ AddEventHandler("qb-buds:ogk", function()
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_og-kush", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-				        TriggerServerEvent('QBCore:Server:AddItem', "joint_ogk", 1)
+					TriggerServerEvent('QBCore:Server:AddItem', "joint_ogk", 1)
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_ogk"], "add")
                     			QBCore.Functions.Notify("You made a Joint", "success")
 				end, function()
@@ -176,7 +177,7 @@ AddEventHandler("qb-buds:ww", function()
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_white-widow", 1)
 					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "joint_ww", 1)					
+					TriggerServerEvent('QBCore:Server:AddItem', "joint_ww", 1)
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_ww"], "add")
                     			QBCore.Functions.Notify("You made a Joint", "success")
 				end, function()
